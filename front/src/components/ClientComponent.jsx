@@ -169,14 +169,14 @@ export default function ClientComponent() {
   }
 
   const setStatus = (info) => {
-    const {DeviceTagId, DeviceTagValue, message} = info || {};
+    const {DeviceTagId, DeviceTagValue, msg} = info || {};
     let color = 'green';
     if(DeviceTagId === 'CDB001' && DeviceTagValue === 100){
-      setTextSucces(message)
+      setTextSucces(msg)
     }
     if(DeviceTagId === 'CDB001' && 
       (DeviceTagValue === 103 || DeviceTagValue === 105 )){
-      setTextError(message)
+      setTextError(msg)
       color = 'red';
     }
     return color;
@@ -214,11 +214,11 @@ export default function ClientComponent() {
     <Box sx={{ flexGrow: 1, padding: "10px" }}>
       <Grid xs={12} container rowSpacing={1} columnSpacing={{ xs: 5}}>
         <Grid xs={3} item>
-          <NewDetailInfo info={{...{...retAcum100m5, title:'Perforacion'} }}/>
+          <NewDetailInfo info={{...{...retAcum100, title:'Perforacion'} }}/>
           <NewDetailInfo info={{...{...retAcum100m5, title:'Tronadura'} }}/>
         </Grid>
         <Grid xs={3} item>
-          <NewDetailInfo info={{...{...retAcum100m5, title:'Carguío'} }}/>
+          <NewDetailInfo info={{...{...cdb001, title:'Carguío'} }}/>
           <NewDetailInfo info={{...{...retAcum100m5, title:'Transporte'} }}/>
         </Grid>
         <Grid xs={3} item>
